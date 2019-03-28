@@ -4,7 +4,7 @@
 
 ## Что сделано
 
-- [x] Базовая верстка на React [create-react-app](https://github.com/facebook/create-react-app)
+- [x] Базовая верстка на [React](https://github.com/facebook/create-react-app))
 - [x] API сервер на Express с использованием TypeSript
 - [x] Фронтенд за заметками ходит в API
 - [x] [Интеграционные тесты](backend/src/notes/notes.spec.ts) с использованием библиотеки [supertest](https://github.com/visionmedia/supertest)
@@ -16,6 +16,8 @@
 
 ## Что сделать
 
+- [ ] Показывать Spinner во время загрузки заметок
+- [ ] На этапе сборки вырезать локали `momentjs`
 - [ ] Посмотреть верстку в других браузерах (Есть косяки)
 - [ ] Добавить анимаций, а то скучновато выглядит
 - [ ] Переписать `frontend` на TypeScript
@@ -29,6 +31,7 @@
 - [ ] [bem-react](https://github.com/bem/bem-react)
 - [ ] Прикрутить MongoDB - бесплатно на [MLab](https://mlab.com/)
 - [ ] Написать e2e тесты (Cypress, WebdriverIO, Selenium, etc)
+- [ ] Посмотреть как Slack и Facebook отображают UI когда загружаются данные - заменить Spinner на это
 
 # Основные скрипты
 
