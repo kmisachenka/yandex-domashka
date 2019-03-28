@@ -4,28 +4,30 @@
 
 ## Что сделано
 
-- [x] Базовая верстка на React [https://github.com/facebook/create-react-app](create-react-app)
+- [x] Базовая верстка на React [create-react-app](https://github.com/facebook/create-react-app)
 - [x] API сервер на Express с использованием TypeSript
 - [x] Фронтенд за заметками ходит в API
-- [x] Интеграционные тесты с использованием библиотеки [supertest](https://github.com/visionmedia/supertest)
-- [x] Модульные тесты (API)
+- [x] [Интеграционные тесты](backend/src/notes/notes.spec.ts) с использованием библиотеки [supertest](https://github.com/visionmedia/supertest)
+- [x] [Модульные тесты (API)](backend/src/notes/repositories/Notes.test.ts)
 - [x] Проверка линтерами JavaScript(TypeScript) и CSS кода
-- [x] Continuous Delivery с помощью travis-ci и heroku (если на CI прошли тесты и линетры - билд выливается на Heroku)
+- [x] Continuous Delivery с помощью [travis-ci](.travis.yml) и [heroku](Procfile) (если на CI прошли тесты и линетры - билд выливается на Heroku)
 - [x] Настроен Storybook
 - [x] Настроен `husky` для проверки кода линтерами и тестами перед коммитом
 
 ## Что сделать
 
 - [ ] Посмотреть верстку в других браузерах (Есть косяки)
+- [ ] Добавить анимаций, а то скучновато выглядит
 - [ ] Переписать `frontend` на TypeScript
+- [ ] Добавить взаимодействие с API (POST, PUT, PATH)
 - [ ] Пересмотреть логику компомента Note.jsx (слишком сложно понять что там происходит)
 - [ ] Пересмотреть работу с состоянием на клиенте
 - [ ] Добавить тестирование снапшотами на клиенте
 
 ## Было бы хорошо сделать
 
-- [ ] bem-react
-- [ ] Прикрутить MongoDB
+- [ ] [bem-react](https://github.com/bem/bem-react)
+- [ ] Прикрутить MongoDB - бесплатно на [MLab](https://mlab.com/)
 - [ ] Написать e2e тесты (Cypress, WebdriverIO, Selenium, etc)
 
 # Основные скрипты
