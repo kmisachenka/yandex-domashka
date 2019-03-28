@@ -1,6 +1,6 @@
-# Яндекс.Домашка &middot; билд статус
+# Яндекс.Домашка &middot; [![Build Status](https://travis-ci.com/kmisachenka/yandex-domashka.svg?token=xrh736JcsE4kMVB1sCn3&branch=master)](https://travis-ci.com/kmisachenka/yandex-domashka)
 
-Демо: добавить ссылку
+Демо: [https://yandex-domashka.herokuapp.com/](https://yandex-domashka.herokuapp.com/)
 
 ## Что сделано
 
@@ -16,7 +16,7 @@
 
 ## Что сделать
 
-- [ ] Посмотреть верстку в других браузерах (В safari криво отображается)
+- [ ] Посмотреть верстку в других браузерах (Есть косяки)
 - [ ] Переписать `frontend` на TypeScript
 - [ ] Пересмотреть логику компомента Note.jsx (слишком сложно понять что там происходит)
 - [ ] Пересмотреть работу с состоянием на клиенте

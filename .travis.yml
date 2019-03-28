@@ -3,5 +3,5 @@ node_js: 10
 env:
   - NODE_ENV=development
 script:
-  - npm lint
-  - npm test
+  - yarn lint
+  - yarn test
