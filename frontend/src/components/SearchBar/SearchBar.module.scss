@@ -1,0 +1,76 @@
+.form {
+  display: flex;
+}
+
+.label {
+  height: 32px;
+  position: relative;
+  width: 100%;
+
+  &::after {
+    background: url('./svg/clear.svg') no-repeat;
+    content: '';
+    height: 12px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 12px;
+  }
+}
+
+.input {
+  border: 2px solid #e6e6e6;
+  border-radius: 4px 0 0 4px;
+  box-sizing: border-box;
+  font-family: Helvetica, serif;
+  font-size: 15px;
+  line-height: 28px;
+
+  min-height: 28px;
+
+  padding: 0 12px;
+
+  position: relative;
+
+  width: 100%;
+
+  &:focus {
+    border-color: #fc0;
+    outline: none;
+  }
+
+  &::placeholder {
+    color: #000;
+    opacity: 0.2;
+  }
+}
+
+.button {
+  appearance: none;
+
+  background: #e6e6e6;
+  border: 0;
+  border-radius: 0 4px 4px 0;
+
+  color: #000;
+
+  font-family: Helvetica, serif;
+  font-size: 15px;
+
+  height: 100%;
+  line-height: 32px;
+  margin: 0;
+
+  padding: 0 16px;
+
+  &:hover {
+    background-color: #3ba6ff;
+    color: #fff;
+    transition: background-color 0.2s ease, color 0.1s ease-in;
+  }
+
+  &:active {
+    background-color: #008000;
+    color: #fff;
+  }
+}

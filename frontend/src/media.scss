@@ -1,0 +1,46 @@
+$break-tablet: 768px;
+$break-desktop: 1366px;
+
+@mixin tablet {
+  @media (min-width: $break-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $break-desktop) {
+    @content;
+  }
+}
+
+@mixin list-style-none {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin padding-mobile {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@mixin padding-tablet {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@mixin padding-desktop {
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+@mixin zero {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin hide-on-desktop {
+  @include desktop {
+    display: none;
+  }
+}

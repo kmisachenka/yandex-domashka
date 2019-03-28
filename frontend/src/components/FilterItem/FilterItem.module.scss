@@ -1,0 +1,46 @@
+.label {
+  display: block;
+  height: 48px;
+  width: 48px;
+}
+
+.input {
+  clip: rect(0 0 0 0);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+
+  &:checked + .checkbox {
+    background-image: url('./svg/checked.svg');
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+    opacity: 1;
+
+    transition: opacity 0.2s ease-in, box-shadow 0.1s ease-in;
+  }
+
+  &:focus:not(:active) + .checkbox {
+    box-shadow:
+      0 0 0 0.1em #4a90e2,
+      0 0 0 0.2em #7ed321;
+  }
+}
+
+.checkbox {
+  background-position: 50% 50%;
+
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  height: 48px;
+
+  opacity: 0.4;
+  overflow: hidden;
+  position: absolute;
+  width: 48px;
+
+  &:hover {
+    opacity: 1;
+
+    transition: opacity 0.1s ease-in;
+  }
+}

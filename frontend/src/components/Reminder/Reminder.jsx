@@ -1,0 +1,24 @@
+import React from 'react';
+import ReactSVG from 'react-svg';
+import * as PropTypes from 'prop-types';
+import moment from 'moment';
+import 'moment/locale/ru';
+
+import ReminderSVG from './svg/reminder.svg';
+import styles from './Reminder.module.scss';
+
+moment.locale('ru');
+
+export default function Reminder(props) {
+  const { reminder } = props;
+  return (
+    <>
+      <ReactSVG src={ReminderSVG} />
+      <div className={styles.text}>{`Осталось ${moment(reminder).fromNow(true)}`}</div>
+    </>
+  );
+}
+
+Reminder.propTypes = {
+  reminder: PropTypes.number.isRequired,
+};

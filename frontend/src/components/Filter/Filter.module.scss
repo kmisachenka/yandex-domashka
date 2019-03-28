@@ -1,0 +1,64 @@
+@import '../../media';
+
+.filter {
+  align-items: center;
+  display: flex;
+
+  padding-bottom: 16px;
+
+  @include tablet {
+    padding-bottom: 32px;
+    padding-top: 16px;
+  }
+}
+
+.title {
+  @include zero;
+
+  display: none;
+  font-family: Helvetica, serif;
+  font-size: 36px;
+  font-weight: normal;
+  line-height: 42px;
+
+  margin-right: 16px;
+
+  @include desktop {
+    display: block;
+  }
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  -ms-overflow-style: none;
+
+  overflow-x: auto;
+  padding: 3px; /* TODO */
+
+  scrollbar-width: none;
+  white-space: nowrap;
+
+  &::-webkit-scrollbar {
+    background: transparent;
+    width: 0;
+  }
+}
+
+.item {
+  display: inline-block;
+
+  margin-left: 16px;
+  position: relative;
+
+  @include desktop {
+    &:first-child {
+      margin-left: 16px;
+    }
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+}

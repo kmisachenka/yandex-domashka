@@ -1,0 +1,92 @@
+@import '../../media';
+
+.header {
+  background: #fff;
+  padding: 16px;
+  position: relative;
+
+  @include desktop {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+
+  position: relative;
+}
+
+.hamburger {
+  align-self: center;
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.search {
+  display: none;
+
+  @include desktop {
+    display: block;
+
+  }
+}
+
+.navigation {
+  background-color: #fff;
+  display: none;
+
+  position: absolute;
+
+  width: calc(100% - 16px * 2);
+
+  z-index: 99;
+
+  @include desktop {
+    align-items: center;
+    display: flex;
+    position: initial;
+    width: auto;
+  }
+}
+
+.list {
+  @include list-style-none();
+  padding-top: 16px;
+  width: 100%;
+
+  @media screen and (min-width: 1366px) {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 0;
+  }
+}
+
+.list-item {
+  margin-bottom: 16px;
+
+  @include desktop {
+    margin-bottom: 0;
+    margin-left: 10px;
+  }
+}
+
+.active {
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  padding: 16px;
+
+  @media screen and (min-width: 979px) {
+    flex-direction: row;
+  }
+}
+
+.hide-on-desktop {
+  @include hide-on-desktop;
+}

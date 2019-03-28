@@ -1,0 +1,48 @@
+@import '../../media';
+
+.list {
+  @include list-style-none;
+
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 100%;
+}
+
+.item {
+  border-bottom: 1px solid #fff;
+  display: inline-flex;
+  justify-self: center;
+  padding-bottom: 12px;
+
+  padding-top: 12px;
+
+  &:first-child {
+    padding-bottom: 12px;
+    padding-top: 0;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.icon {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.url {
+  color: #000;
+  font-family: Helvetica, serif;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

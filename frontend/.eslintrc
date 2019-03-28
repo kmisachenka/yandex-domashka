@@ -1,0 +1,34 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint-config-airbnb",
+    "react-app",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parserOptions": {
+    "sourceType": "module",
+    "useJSXTextNode": true
+  },
+  "rules": {
+    "indent": "off",
+    "@typescript-eslint/indent": ["error", 2],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.stories.jsx",
+          "**/*.spec.jsx",
+          "**/*.stories.jsx"
+        ]
+      }
+    ],
+    "jsx-a11y/label-has-for": 0,
+    "jsx-a11y/label-has-associated-control": 0
+  },
+  "env": {
+    "jest": true
+  }
+}

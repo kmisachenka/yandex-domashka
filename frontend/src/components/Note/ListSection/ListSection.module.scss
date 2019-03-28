@@ -1,0 +1,136 @@
+@import '../../../media';
+
+.note {
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+
+  z-index: 99;
+}
+
+.unchecked {
+  @include list-style-none;
+}
+
+.checked {
+  @include list-style-none;
+
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  padding-top: 72px;
+}
+
+.unchecked-item {
+  padding-bottom: 16px;
+}
+
+.unchecked-option {
+  display: flex;
+  align-items: center;
+}
+
+.checked-item {
+  font-family: Helvetica, serif;
+  font-size: 16px;
+  line-height: 20px;
+  padding-right: 8px;
+
+  padding-top: 16px;
+  text-decoration-line: line-through;
+}
+
+/* checkbox */
+
+.unchecked .option {
+  display: flex;
+  align-items: center;
+}
+
+.option {
+  display: block;
+
+  position: relative;
+
+  &:hover .input {
+    /* stylelint-disable-next-line max-nesting-depth */
+    &:not(:checked) + .checkbox {
+      background-color: #d9d9d9;
+      background-image: url('./svg/active.svg');
+      opacity: 0.4;
+    }
+  }
+}
+
+.body {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 24px;
+}
+
+.title {
+  font-family: Helvetica, serif;
+  font-size: 22px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0 0 16px;
+}
+
+.input {
+  appearance: none;
+  height: 18px;
+
+  outline: none;
+  position: absolute;
+
+  width: 18px;
+}
+
+.checkbox {
+  background: #d9d9d9;
+  border-radius: 3px;
+  height: 18px;
+  margin-right: 12px;
+  overflow: hidden;
+  position: absolute;
+  width: 18px;
+}
+
+.input:checked + .checkbox {
+  background: #fc0 url('./svg/active.svg');
+}
+
+/* Focused */
+
+.input:focus + .checkbox {
+  box-shadow: 0 0 0 0.1em #4a90e2, 0 0 0 0.2em #7ed321;
+}
+
+/* Disabled */
+
+.input:disabled + .checkbox {
+  box-shadow: 0 0 0 0.1em #9b9b9b;
+}
+
+.input:checked:disabled + .checkbox {
+  background-color: #9b9b9b;
+}
+
+.checkbox-text {
+  color: #000;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+
+  margin-left: 30px;
+}
+
+.checked-section {
+  background-color: #fff;
+  border-radius: 16px;
+  margin-top: -64px;
+}

@@ -1,0 +1,81 @@
+{
+  "name": "yandex-domashka-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": "10.x"
+  },
+  "homepage": "https://ya-domashka.herokuapp.com/",
+  "proxy": "http://localhost:9000",
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/**/*.d.ts",
+      "!src/index.jsx",
+      "!src/registerServiceWorker.js"
+    ]
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "dependencies": {
+    "@rooks/use-toggle": "^2.0.2",
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.11.6",
+    "@types/react": "^16.8.8",
+    "@types/react-dom": "^16.8.3",
+    "classnames": "^2.2.6",
+    "hex-to-rgba": "^1.0.2",
+    "moment": "^2.24.0",
+    "node-sass": "^4.11.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-scripts": "2.1.8",
+    "react-svg": "^7.2.12",
+    "react-use": "^5.5.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@storybook/addon-actions": "^5.0.1",
+    "@storybook/addon-links": "^5.0.1",
+    "@storybook/addon-viewport": "^5.0.1",
+    "@storybook/addons": "^5.0.1",
+    "@storybook/react": "^5.0.1",
+    "@typescript-eslint/eslint-plugin": "^1.5.0",
+    "@typescript-eslint/parser": "^1.5.0",
+    "babel-eslint": "9.0.0",
+    "babel-loader": "^8.0.5",
+    "eslint": "5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-config-react-app": "^3.0.8",
+    "eslint-plugin-flowtype": "2.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "7.x",
+    "eslint-plugin-react-hooks": "1.5.0",
+    "eslint-watch": "^5.0.1",
+    "stylelint": "^9.10.1",
+    "stylelint-config-sass-guidelines": "^5.3.0",
+    "stylelint-config-standard": "^18.2.0",
+    "typescript": "^3.3.4000"
+  },
+  "scripts": {
+    "start": "SKIP_PREFLIGHT_CHECK=true react-scripts start",
+    "build": "SKIP_PREFLIGHT_CHECK=true react-scripts build",
+    "postinstall": "yarn build",
+    "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test --coverage",
+    "test:watch": "SKIP_PREFLIGHT_CHECK=true react-scripts test --coverage --watchAll",
+    "lint": "yarn lint:js && yarn lint:css",
+    "lint:js": "eslint 'src/**/*.{js,ts,tsx,jsx}'",
+    "lint:js:watch": "esw 'src/**/*.{js,ts,tsx,jsx}' --watch --color",
+    "lint:css": "stylelint '**/*.scss'",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  }
+}
