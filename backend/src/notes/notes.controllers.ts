@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import { Note } from '../types';
 
 import * as fixture from '../fixture.json';
@@ -10,7 +10,11 @@ const notesRepository: Notes = Notes.factory(fixture.notes as Note[]);
 const colorsRepository: Colors = Colors.factory(fixture.colors);
 const tagsRepository: Tags = Tags.factory(fixture.tags);
 
-export const getAll = (req: Request, res: Response): void => {
+export const getAll = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Response | void => {
   try {
     const { color } = req.query;
     if (color) {
@@ -39,11 +43,15 @@ export const getAll = (req: Request, res: Response): void => {
       },
     });
   } catch (error) {
-    res.status(500).json({ ok: false, error: error.message });
+    next(error);
   }
 };
 
-export const getOne = (req: Request, res: Response): void => {
+export const getOne = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Response | void => {
   try {
     const { id } = req.params;
     const note = notesRepository.getOne(id);
@@ -55,11 +63,15 @@ export const getOne = (req: Request, res: Response): void => {
     }
     res.status(200).json({ ok: true, note });
   } catch (error) {
-    res.status(500).json({ ok: false, error: error.message });
+    next(error);
   }
 };
 
-export const createOne = (req: Request, res: Response): void => {
+export const createOne = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Response | void => {
   try {
     const { note } = req.body;
     if (!note) {
@@ -71,27 +83,35 @@ export const createOne = (req: Request, res: Response): void => {
     notesRepository.addNote(note);
     res.status(200).json({ ok: true });
   } catch (error) {
-    res.status(500).json({ ok: false, error: error.message });
+    next(error);
   }
 };
 
-export const removeOne = (req: Request, res: Response): void => {
+export const removeOne = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Response | void => {
   try {
     const { id } = req.params;
     notesRepository.removeOne(id);
     res.status(200).json({ ok: true });
   } catch (error) {
-    res.status(500).json({ ok: false, error: error.message });
+    next(error);
   }
 };
 
-export const updateOne = async (req: Request, res: Response): Promise<void> => {
+export const updateOne = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Response | void => {
   try {
     const { id } = req.params;
     const { note } = req.body;
     notesRepository.updateOne(id, note);
     res.status(200).json({ ok: true });
   } catch (error) {
-    res.status(500).json({ ok: false, error: error.message });
+    next(error);
   }
 };

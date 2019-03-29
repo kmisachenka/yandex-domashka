@@ -3,13 +3,13 @@ import * as controllers from './notes.controllers';
 
 const router: Router = Router();
 
-// /api/cards
+// /api/notes
 router
   .route('/')
   .get(controllers.getAll)
   .post(controllers.createOne);
 
-// /api/cards/:id
+// /api/notes/:id
 router
   .route('/:id')
   .get(controllers.getOne)

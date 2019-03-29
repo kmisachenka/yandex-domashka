@@ -5,6 +5,7 @@ import * as morgan from 'morgan';
 import * as errorhandler from 'errorhandler';
 import * as compression from 'compression';
 
+import errorApiHandler from './middlewares/errorHandler';
 import notesRouter from './notes/notes.router';
 
 const app: express.Application = express();
@@ -20,6 +21,8 @@ if (process.env.NODE_ENV !== 'testing') {
 if (process.env.NODE_ENV !== 'production') {
   app.use(errorhandler());
 }
+
+app.use(errorApiHandler);
 
 app.use('/api/notes', notesRouter);
 
