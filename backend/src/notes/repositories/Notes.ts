@@ -84,10 +84,6 @@ export default class Notes {
     return this.notes.length;
   }
 
-  public find(callback: FindCallbackFunction): Note | undefined {
-    return this.notes.find(callback);
-  }
-
   public getByColorId(color: number): Note[] {
     const notes = this.toArray();
     return notes.filter(note => note.color === Number(color));
@@ -106,9 +102,10 @@ export default class Notes {
 
   public updateOne(id: ID, note: Note): Notes {
     const index = this.notes.findIndex(n => n.id === Number(id));
-    if (index !== -1) {
-      this.notes[index] = note;
+    if (index === -1) {
+      throw Error(`there is no note with id: ${id}`);
     }
+    this.notes[index] = note;
     return this;
   }
 

@@ -22,9 +22,8 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(errorhandler());
 }
 
-app.use(errorApiHandler);
-
 app.use('/api/notes', notesRouter);
+app.use(errorApiHandler);
 
 app.use(express.static(path.resolve('..', 'frontend', 'build')));
 

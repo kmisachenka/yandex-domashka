@@ -36,6 +36,15 @@ describe('/api/notes tests', () => {
       expect(notes).toBeInstanceOf(Array);
       expect(notes).toHaveLength(1);
     });
+    it("should throw 400 'incorrect color' if color doesnt exists", async () => {
+      const response: request.Response = await request(app).get(
+        '/api/notes?color=99999'
+      );
+      expect(response.status).toBe(400);
+      const { body } = response;
+      expect(body.ok).toBeFalsy();
+      expect(body.error).toBe('incorrect color');
+    });
   });
 
   describe('POST /', () => {
@@ -176,6 +185,17 @@ describe('/api/notes tests', () => {
       expect(response.status).toBe(200);
       expect(response.body.ok).toBeTruthy();
       expect(response.body.note).toEqual(note);
+    });
+    it('should throw 500 if note with id doesnt exists', async () => {
+      const note = {
+        id: 111111,
+      };
+      const response: request.Response = await request(app)
+        .patch(`/api/notes/${note.id}`)
+        .send({ note });
+      expect(response.status).toBe(500);
+      expect(response.body.ok).toBeFalsy();
+      expect(response.body.error).toBe(`there is no note with id: ${note.id}`);
     });
   });
 });

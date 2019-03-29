@@ -88,24 +88,46 @@ describe('Notes', () => {
 
   describe('addNote()', () => {
     beforeEach(() => {
+      notes.clear();
+    });
+
+    it('should add note', () => {
       const note = {
         id: 1,
         type: 'list',
         text: 'some list',
         created: 1520160803000,
       };
-      notes.clear();
       notes.addNote(note as Note);
+      const array = notes.toArray();
+      expect(array).toBeInstanceOf(Array);
+      expect(array).toHaveLength(1);
     });
 
-    it('should add note', () => {
+    it('should add note with size', () => {
+      const note = {
+        id: 1,
+        size: 'm',
+        type: 'list',
+        text: 'some list',
+        created: 1520160803000,
+      };
+      notes.addNote(note as Note);
       const array = notes.toArray();
       expect(array).toBeInstanceOf(Array);
       expect(array).toHaveLength(1);
     });
 
     it('should assign size if not exists', () => {
+      const note = {
+        id: 1,
+        type: 'list',
+        text: 'some list',
+        created: 1520160803000,
+      };
+      notes.addNote(note as Note);
       const array = notes.toArray();
+      expect(array).toHaveLength(1);
       expect(array[0].size).toBe('s');
     });
   });
