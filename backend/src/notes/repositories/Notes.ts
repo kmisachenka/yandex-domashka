@@ -105,7 +105,7 @@ export default class Notes {
   }
 
   public updateOne(id: ID, note: Note): Notes {
-    const index = this.notes.findIndex(n => n.id === Number(2));
+    const index = this.notes.findIndex(n => n.id === Number(id));
     if (index !== -1) {
       this.notes[index] = note;
     }
