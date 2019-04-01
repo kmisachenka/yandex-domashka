@@ -4,7 +4,7 @@
 
 ## Что сделано
 
-- [x] Базовая верстка на [React](https://github.com/facebook/create-react-app))
+- [x] Базовая верстка на [React](https://github.com/facebook/create-react-app)
 - [x] API сервер на Express с использованием TypeSript
 - [x] Фронтенд за заметками ходит в API
 - [x] [Интеграционные тесты](backend/src/notes/notes.spec.ts) с использованием библиотеки [supertest](https://github.com/visionmedia/supertest)
