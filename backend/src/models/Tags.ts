@@ -1,4 +1,4 @@
-import { Tag } from '../../types';
+import { Tag } from '../types';
 
 export default class Tags {
   private tags: Tag[];

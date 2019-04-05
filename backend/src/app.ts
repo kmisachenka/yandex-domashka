@@ -6,8 +6,9 @@ import * as errorhandler from 'errorhandler';
 import * as compression from 'compression';
 
 import errorApiHandler from './middlewares/errorHandler';
-import notesRouter from './notes/notes.router';
-import imageRouter from './img/image.router';
+import notesRouter from './routes/notes/notes.router';
+import imageRouter from './routes/img/image.router';
+import archiveRouter from './routes/archive/archive.router';
 
 const app: express.Application = express();
 
@@ -25,6 +26,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 app.use('/img', imageRouter);
 app.use('/api/notes', notesRouter);
+app.use('/api/archive', archiveRouter);
 app.use(errorApiHandler);
 
 app.use(express.static(path.resolve('..', 'frontend', 'build')));

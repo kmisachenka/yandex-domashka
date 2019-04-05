@@ -44,6 +44,7 @@ export interface Note {
   attachments?: Attachment[];
   reminder?: number;
   created: number;
+  archived?: boolean;
 }
 
 export interface NotesSchema {

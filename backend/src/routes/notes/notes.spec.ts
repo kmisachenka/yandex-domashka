@@ -1,7 +1,17 @@
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import * as request from 'supertest';
 
-import app from '../app';
+import app from '../../app';
+import { Note } from '../../types';
+import * as fixture from '../../fixture.json';
+import noteRepository from '../../repositories/noteRepository';
+
+const flushRepository = (): void => {
+  noteRepository.clear();
+  fixture.notes.forEach(note => noteRepository.addNote(note as Note));
+};
+
+beforeEach(() => flushRepository());
 
 describe('/api/notes tests', () => {
   describe('GET /', () => {
@@ -18,6 +28,18 @@ describe('/api/notes tests', () => {
       expect(colors).toHaveLength(7);
       expect(notes).toBeInstanceOf(Array);
       expect(notes).toHaveLength(11);
+    });
+    it('should not return archived notes', async () => {
+      const response: request.Response = await request(app).get('/api/notes');
+      expect(response.status).toBe(200);
+      const { body } = response;
+      expect(body.ok).toBeTruthy();
+      expect(body.results).toBeDefined();
+      const { notes } = body.results;
+
+      notes.forEach((note: Note) => {
+        expect(note.archived).toBeUndefined();
+      });
     });
   });
 

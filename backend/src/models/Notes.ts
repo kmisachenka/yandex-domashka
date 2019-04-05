@@ -1,4 +1,4 @@
-import { Note, Type, Size, ID } from '../../types';
+import { Note, Type, Size, ID } from '../types';
 
 type MapCallbackFunction = (note: Note) => Note;
 type FilterCallbackFunction = (note: Note) => boolean;
@@ -17,6 +17,7 @@ export default class Notes {
   }
 
   public addNote(note: Note): void {
+    /* eslint-disable no-param-reassign */
     if (note.size) {
       this.notes.push(note);
     } else {
