@@ -7,6 +7,7 @@ import * as compression from 'compression';
 
 import errorApiHandler from './middlewares/errorHandler';
 import notesRouter from './notes/notes.router';
+import imageRouter from './img/image.router';
 
 const app: express.Application = express();
 
@@ -22,6 +23,7 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(errorhandler());
 }
 
+app.use('/img', imageRouter);
 app.use('/api/notes', notesRouter);
 app.use(errorApiHandler);
 

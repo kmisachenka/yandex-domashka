@@ -12,7 +12,7 @@ export default function ImageAttachments(props) {
       <ul className={styles.list}>
         {attachments.map(({ url }) => (
           <li key={url} className={styles.item}>
-            <img src={url} className={styles.image} alt="Картинка" />
+            <img src={`/img/${url}`} className={styles.image} alt="Картинка" />
           </li>
         ))}
       </ul>

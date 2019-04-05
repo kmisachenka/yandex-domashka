@@ -11,7 +11,7 @@ export default function ImageSection(props) {
 
   return (
     <section className={styles.note} style={{ background }}>
-      <img className={styles.image} src={url} alt="Картинка" />
+      <img className={styles.image} src={`/img/${url}`} alt="Картинка" />
       <NoteFooter tags={tags} created={created} />
     </section>
   );

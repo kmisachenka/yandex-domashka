@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "test": "NODE_ENV=testing jest --colors --coverage",
+    "test": "NODE_ENV=testing jest --colors",
     "test:watch": "yarn test --watchAll",
     "start": "webpack --watch",
     "lint": "eslint 'src/**/*.{js,ts,tsx,jsx}'"
@@ -60,6 +60,7 @@
     "compression": "^1.7.4",
     "errorhandler": "^1.5.0",
     "express": "^4.16.2",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "tinify": "^1.6.0-beta.2"
   }
 }
