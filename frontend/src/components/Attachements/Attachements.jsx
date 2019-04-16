@@ -1,7 +1,7 @@
 import React from 'react';
 
 import LinkAttachments from '../LinkAttachments';
-import ImageAttachments from '../ImageAttachments/ImageAttachments';
+import ImageAttachments from '../ImageAttachments';
 
 export default function Attachments(props) {
   const { attachments } = props;

@@ -1,0 +1,29 @@
+@import '../../media';
+
+.label {
+  align-items: center;
+  display: flex;
+
+  padding-bottom: 16px;
+
+  @include tablet {
+    padding-bottom: 32px;
+    padding-top: 16px;
+  }
+
+  @include desktop {
+    min-width: 1020px;
+  }
+}
+
+.title {
+  @include zero;
+
+  display: block;
+  font-family: Helvetica, serif;
+  font-size: 36px;
+  font-weight: normal;
+  line-height: 42px;
+
+  margin-right: 16px;
+}

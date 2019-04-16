@@ -32,7 +32,6 @@
 
   @include desktop {
     display: block;
-
   }
 }
 
@@ -82,8 +81,12 @@
   left: 0;
   padding: 16px;
 
-  @media screen and (min-width: 979px) {
+  @include tablet {
     flex-direction: row;
+  }
+
+  @include desktop {
+    padding: 0;
   }
 }
 

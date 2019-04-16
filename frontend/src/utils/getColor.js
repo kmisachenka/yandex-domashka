@@ -1,7 +1,7 @@
 import hexToRgba from 'hex-to-rgba';
 
 /* eslint-disable-next-line */
-export const getColorOrDefault = colors => id => {
+const getColorOrDefault = colors => id => {
   if (id !== undefined) {
     const { color } = colors.find(o => o.id === id);
     const rgba = hexToRgba(color, 0.4);
@@ -9,3 +9,5 @@ export const getColorOrDefault = colors => id => {
   }
   return '#FFFFFF';
 };
+
+export default getColorOrDefault;

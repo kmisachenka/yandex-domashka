@@ -10,7 +10,7 @@ export const getArchive = (
 ): Response | void => {
   try {
     const notes = noteRepository.filter(note => Boolean(note.archived));
-    res.status(200).json({ ok: true, notes: notes.toArray() });
+    res.status(200).json({ ok: true, results: notes.toArray() });
   } catch (error) {
     next(error);
   }

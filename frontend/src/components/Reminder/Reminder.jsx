@@ -10,15 +10,20 @@ import styles from './Reminder.module.scss';
 moment.locale('ru');
 
 export default function Reminder(props) {
-  const { reminder } = props;
+  const { reminder, className } = props;
   return (
-    <>
+    <section className={className}>
       <ReactSVG src={ReminderSVG} />
       <div className={styles.text}>{`Осталось ${moment(reminder).fromNow(true)}`}</div>
-    </>
+    </section>
   );
 }
 
+Reminder.defaultProps = {
+  className: '',
+};
+
 Reminder.propTypes = {
   reminder: PropTypes.number.isRequired,
+  className: PropTypes.string,
 };

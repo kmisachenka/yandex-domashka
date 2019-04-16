@@ -1,23 +1,22 @@
 import React from 'react';
 import * as propTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
 import styles from './Logo.module.scss';
 
 export default function Logo(props) {
   const { service } = props;
   return (
     <div className={styles.wrapper}>
-      <a href="#/">
-        <img
-          src="https://yastatic.net/q/logoaas/v1/Яндекс.svg"
-          alt="Яндекс"
-        />
-      </a>
-      <a className={styles.service} href="#/">
+      <Link to="/">
+        <img src="https://yastatic.net/q/logoaas/v1/Яндекс.svg" alt="Яндекс" />
+      </Link>
+      <Link to="/" className={styles.service}>
         <img
           src={`https://yastatic.net/q/logoaas/v1/${service}.svg`}
           alt={`${service}`}
         />
-      </a>
+      </Link>
     </div>
   );
 }

@@ -14,8 +14,8 @@ describe('/api/archive', () => {
       const response: request.Response = await request(app).get('/api/archive');
       expect(response.status).toBe(200);
       expect(response.body.ok).toBeTruthy();
-      expect(response.body.notes).toBeInstanceOf(Array);
-      expect(response.body.notes).toEqual([
+      expect(response.body.results).toBeInstanceOf(Array);
+      expect(response.body.results).toEqual([
         {
           id: 3,
           type: 'text',

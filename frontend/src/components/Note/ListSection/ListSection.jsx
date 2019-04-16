@@ -4,14 +4,15 @@ import cn from 'classnames';
 
 import styles from './ListSection.module.scss';
 
-import NoteFooter from '../../NoteFooter/NoteFooter';
+import { NoteFooter } from '../../../containers';
+import { Note } from "../../../types";
 
 const getChecked = list => list.filter(element => element.checked);
 const getUnchecked = list => list.filter(element => !element.checked);
 
 export default function ListSection(props) {
   const { note, background } = props;
-  const { title, created, tags, items } = note;
+  const { title, items, archived } = note;
 
   const [checked] = useState(getChecked(items));
   const [unchecked] = useState(getUnchecked(items));
@@ -33,6 +34,7 @@ export default function ListSection(props) {
                       value={text}
                       className={styles.input}
                       onChange={() => {}}
+                      disabled={archived}
                     />
                     <span className={styles.checkbox} />
                     <span className={styles['checkbox-text']}>{text}</span>
@@ -55,6 +57,7 @@ export default function ListSection(props) {
                     className={styles.input}
                     onChange={() => {}}
                     checked
+                    disabled={archived}
                   />
                   <span className={styles.checkbox} />
                   <span
@@ -70,25 +73,13 @@ export default function ListSection(props) {
             ))}
           </ul>
         )}
-        <NoteFooter tags={tags} created={created} />
+        <NoteFooter note={note} />
       </section>
     </>
   );
 }
 
 ListSection.propTypes = {
-  note: PropTypes.shape({
-    size: PropTypes.oneOf(['s', 'm', 'l']).isRequired,
-    created: PropTypes.number.isRequired,
-    title: PropTypes.string,
-    tags: PropTypes.array,
-    color: PropTypes.number,
-    attachments: PropTypes.arrayOf(
-      PropTypes.shape({
-        text: PropTypes.string.isRequired,
-        checked: PropTypes.bool.isRequired,
-      })
-    ),
-  }).isRequired,
+  note: PropTypes.shape(Note).isRequired,
   background: PropTypes.string.isRequired,
 };

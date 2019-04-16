@@ -1,35 +1,24 @@
-import React, { useContext, useEffect } from 'react';
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
-import Notes from '../components/Notes/Notes';
-import Filter from '../components/Filter/Filter';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import styles from './index.module.scss';
-import { StateContext } from '../contexts/stateContext';
 
-import callApi from '../utils/callApi';
+import { Notes, Archive } from '../containers';
+import { Header, Footer } from '../components';
 
-export default function Index() {
-  const { state, setState } = useContext(StateContext);
-
-  const fetchNotes = async () => {
-    callApi('/notes').then(res => setState(res.results));
-  };
-
-  useEffect(() => {
-    fetchNotes();
-  }, []);
-
-  return (
-    <div className={styles.app}>
+const Index = () => (
+  <Router>
+    <div className={styles.container}>
       <Header />
-      {state && state.notes && state.notes.length > 0 && (
-        <main className={styles.wrapper}>
-          <Filter colors={state.colors} />
-          <Notes colors={state.colors} notes={state.notes} />
-        </main>
-      )}
-      <Footer copyright="Кирилл Мисоченко" />
+      <main className={styles.wrapper}>
+        <Switch>
+          <Route exact path="/archive" component={Archive} />
+          <Route exact path="/" component={Notes} />
+        </Switch>
+      </main>
+      <Footer className={styles.footer} copyright="Кирилл Мисоченко" />
     </div>
-  );
-}
+  </Router>
+);
+
+export default Index;

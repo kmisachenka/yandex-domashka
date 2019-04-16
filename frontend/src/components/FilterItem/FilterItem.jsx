@@ -1,23 +1,18 @@
 import React from 'react';
-import { useToggle } from 'react-use';
-import * as propTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 import hexToRgba from 'hex-to-rgba';
+
 import styles from './FilterItem.module.scss';
 
 export default function FilterItem(props) {
-  const { checked } = props;
-  const [isChecked, toggleChecked] = useToggle(checked);
-  const { color, handleClick } = props;
+  const { checked, color, onClick } = props;
   return (
     <label className={styles.label}>
       <input
         className={styles.input}
         type="checkbox"
-        checked={isChecked}
-        onChange={() => {
-          toggleChecked();
-          handleClick(isChecked);
-        }}
+        checked={checked}
+        onChange={onClick}
       />
       <span
         className={styles.checkbox}
@@ -30,10 +25,11 @@ export default function FilterItem(props) {
 FilterItem.defaultProps = {
   color: '#E84747',
   checked: false,
+  onClick: () => {},
 };
 
 FilterItem.propTypes = {
-  handleClick: propTypes.func.isRequired,
-  color: propTypes.string,
-  checked: propTypes.bool,
+  color: PropTypes.string,
+  checked: PropTypes.bool,
+  onClick: PropTypes.func,
 };

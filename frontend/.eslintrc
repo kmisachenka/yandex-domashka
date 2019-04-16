@@ -15,18 +15,9 @@
   "rules": {
     "indent": "off",
     "@typescript-eslint/indent": ["error", 2],
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": [
-          "**/*.stories.jsx",
-          "**/*.spec.jsx",
-          "**/*.stories.jsx"
-        ]
-      }
-    ],
     "jsx-a11y/label-has-for": 0,
-    "jsx-a11y/label-has-associated-control": 0
+    "jsx-a11y/label-has-associated-control": 0,
+    "import/no-extraneous-dependencies": 0
   },
   "env": {
     "jest": true

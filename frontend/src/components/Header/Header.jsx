@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import useToggle from '@rooks/use-toggle';
+import { Link } from 'react-router-dom';
 
 import styles from './Header.module.scss';
 import Button from '../Button';
@@ -15,19 +16,28 @@ export default function Header() {
       <div className={styles.logo}>
         <Logo />
         <div className={styles.hamburger}>
-          <Hamburger className={styles.hamburger} handleClick={toggleIsActive} />
+          <Hamburger
+            className={styles.hamburger}
+            handleClick={toggleIsActive}
+          />
         </div>
       </div>
       <div className={styles.search}>
         <SearchBar />
       </div>
-      <nav className={cn(styles.navigation, { [`${styles.active}`]: isActive })}>
+      <nav
+        className={cn(styles.navigation, { [`${styles.active}`]: isActive })}
+      >
         <ul className={styles.list}>
           <li className={styles['list-item']}>
-            <Button>Активные</Button>
+            <Link to="/" onClick={toggleIsActive}>
+              <Button>Активные</Button>
+            </Link>
           </li>
           <li className={styles['list-item']}>
-            <Button disabled>Архив</Button>
+            <Link to="/archive" onClick={toggleIsActive}>
+              <Button>Архив</Button>
+            </Link>
           </li>
           <li className={styles['list-item']}>
             <Button theme="primary">Добавить</Button>

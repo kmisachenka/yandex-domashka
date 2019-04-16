@@ -42,6 +42,12 @@
   &:hover {
     opacity: 1;
   }
+
+  &:disabled {
+    &:hover {
+      background: none;
+    }
+  }
 }
 
 .item {
