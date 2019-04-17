@@ -66,6 +66,20 @@ describe('Notes', () => {
       expect(array[0].text).toBe('changed');
       expect(array[1].text).toBe('changed');
     });
+
+    it('should return a copy of array', () => {
+      const modified = notes.map(note => {
+        note.text = 'modified';
+        return note;
+      });
+      const modifiedArray = modified.toArray();
+      expect(modifiedArray[0].text).toBe('modified');
+      expect(modifiedArray[1].text).toBe('modified');
+
+      const orignalArray = notes.toArray();
+      expect(orignalArray[0].text).toBe('some text');
+      expect(orignalArray[1].text).toBe('some image');
+    });
   });
 
   describe('filter()', () => {

@@ -68,8 +68,8 @@ export default class Notes {
   }
 
   public map(callback: MapCallbackFunction): Notes {
-    this.notes = this.notes.map(callback);
-    return this;
+    const copy = this.notes.map(note => ({ ...note }));
+    return Notes.factory(copy.map(callback));
   }
 
   public filter(callback: FilterCallbackFunction): Notes {
