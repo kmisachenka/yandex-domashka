@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter should match snapshot 1`] = `
+<aside
+  className="filter"
+>
+  <h2
+    className="title"
+  >
+    Заметки
+  </h2>
+  <ul
+    className="list"
+  >
+    <li
+      className="item"
+      key="0"
+    >
+      <FilterItem
+        checked={true}
+        color="#E84747"
+        id={0}
+        onClick={[Function]}
+      />
+    </li>
+    <li
+      className="item"
+      key="1"
+    >
+      <FilterItem
+        checked={true}
+        color="#F2994A"
+        id={1}
+        onClick={[Function]}
+      />
+    </li>
+    <li
+      className="item"
+      key="2"
+    >
+      <FilterItem
+        checked={false}
+        color="#F2C94C"
+        id={2}
+        onClick={[Function]}
+      />
+    </li>
+  </ul>
+</aside>
+`;

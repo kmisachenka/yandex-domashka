@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinner should match snapshow 1`] = `
+<div
+  className="spinner"
+>
+  <onlyUpdateForKeys(Loader)
+    color="#fc0"
+    css={Object {}}
+    loading={true}
+    size={100}
+    sizeUnit="px"
+  />
+</div>
+`;

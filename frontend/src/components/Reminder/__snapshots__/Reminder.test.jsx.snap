@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reminder should match the snapshot 1`] = `
+<section
+  className=""
+>
+  <ReactSVG
+    evalScripts="never"
+    fallback={null}
+    loading={null}
+    onInjected={[Function]}
+    renumerateIRIElements={true}
+    src="reminder.svg"
+    svgClassName={null}
+    svgStyle={Object {}}
+    wrapper="div"
+  />
+  <div
+    className="text"
+  >
+    Осталось 2 дня
+  </div>
+</section>
+`;

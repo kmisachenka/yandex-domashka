@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LinkAttachments should match snapshot 1`] = `
+<Fragment>
+  <ForwardRef
+    className="icon"
+  />
+  <a
+    className="url"
+    href="https://thiscatdoesnotexist.com"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    thiscatdoesnotexist.com
+  </a>
+</Fragment>
+`;

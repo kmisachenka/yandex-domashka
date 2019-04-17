@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should match snapshot 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="logo"
+  >
+    <Logo
+      service="Домашка"
+    />
+    <div
+      className="hamburger"
+    >
+      <Hamburger
+        className="hamburger"
+        handleClick={[Function]}
+      />
+    </div>
+  </div>
+  <div
+    className="search"
+  >
+    <SearchBar />
+  </div>
+  <nav
+    className="navigation"
+  >
+    <ul
+      className="list"
+    >
+      <li
+        className="list-item"
+      >
+        <Link
+          onClick={[Function]}
+          to="/"
+        >
+          <Button
+            disabled={false}
+            handleClick={[Function]}
+            theme="default"
+          >
+            Активные
+          </Button>
+        </Link>
+      </li>
+      <li
+        className="list-item"
+      >
+        <Link
+          onClick={[Function]}
+          to="/archive"
+        >
+          <Button
+            disabled={false}
+            handleClick={[Function]}
+            theme="default"
+          >
+            Архив
+          </Button>
+        </Link>
+      </li>
+      <li
+        className="list-item"
+      >
+        <Button
+          disabled={false}
+          handleClick={[Function]}
+          theme="primary"
+        >
+          Добавить
+        </Button>
+      </li>
+      <li
+        className="listItem hide-on-desktop"
+      >
+        <SearchBar />
+      </li>
+    </ul>
+  </nav>
+</header>
+`;

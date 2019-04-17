@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar should match the snapshot 1`] = `
+<form
+  className="form"
+>
+  <label
+    className="label"
+  >
+    <input
+      className="input"
+      placeholder="Поиск"
+      type="search"
+    />
+  </label>
+  <button
+    className="button"
+    type="button"
+  >
+    Найти
+  </button>
+</form>
+`;

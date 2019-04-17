@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoteFooter should match snapshot 1`] = `
+<div
+  className="footer"
+>
+  <Connect(TagsContainer)
+    tags={Array []}
+  />
+  <div
+    className="last-line"
+  >
+    <ul
+      className="buttons"
+    >
+      <li
+        className="item"
+      >
+        <button
+          className="button"
+          onClick={[Function]}
+          type="button"
+        >
+          <ForwardRef />
+        </button>
+      </li>
+      <li
+        className="item"
+      >
+        <button
+          className="button"
+          type="button"
+        >
+          <ForwardRef />
+        </button>
+      </li>
+    </ul>
+    <span
+      className="time"
+    >
+      2 дня
+    </span>
+  </div>
+</div>
+`;

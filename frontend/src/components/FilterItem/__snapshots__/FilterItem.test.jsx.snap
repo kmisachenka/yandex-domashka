@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterItem should match snapshot 1`] = `
+<label
+  className="label"
+>
+  <input
+    checked={false}
+    className="input"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <span
+    className="checkbox"
+    style={
+      Object {
+        "backgroundColor": "rgba(232, 71, 71, 1)",
+      }
+    }
+  />
+</label>
+`;

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageAttachments should match snapshot 1`] = `
+<Fragment>
+  <ForwardRef
+    className="svg"
+  />
+  <ul
+    className="list"
+  >
+    <li
+      className="item"
+      key="https://link.com/image.png"
+    >
+      <img
+        alt="Картинка"
+        className="image"
+        src="/img/https://link.com/image.png"
+      />
+    </li>
+  </ul>
+</Fragment>
+`;

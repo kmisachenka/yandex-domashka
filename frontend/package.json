@@ -12,6 +12,7 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
       "!src/**/*.d.ts",
+      "!src/**/*.stories.jsx",
       "!src/index.jsx",
       "!src/registerServiceWorker.js"
     ]
@@ -25,8 +26,11 @@
   "dependencies": {
     "@rooks/use-toggle": "^2.0.2",
     "classnames": "^2.2.6",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
     "hex-to-rgba": "^1.0.2",
     "immer": "^2.1.5",
+    "jest-enzyme": "^7.0.2",
     "moment": "^2.24.0",
     "node-sass": "^4.11.0",
     "prop-types": "^15.7.2",
@@ -37,6 +41,7 @@
     "react-scripts": "2.1.8",
     "react-spinners": "^0.5.3",
     "react-svg": "^7.2.12",
+    "react-test-renderer": "^16.8.6",
     "redux": "^4.0.1",
     "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0",
@@ -73,7 +78,7 @@
     "start": "SKIP_PREFLIGHT_CHECK=true react-scripts start",
     "build": "SKIP_PREFLIGHT_CHECK=true react-scripts build",
     "postinstall": "yarn build",
-    "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test --coverage",
+    "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test --verbose --coverage",
     "test:watch": "SKIP_PREFLIGHT_CHECK=true react-scripts test --watchAll",
     "lint": "yarn lint:js && yarn lint:css",
     "lint:js": "eslint 'src/**/*.{js,ts,tsx,jsx}'",

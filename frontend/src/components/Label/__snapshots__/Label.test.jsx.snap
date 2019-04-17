@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Label should match snapshot 1`] = `
+<aside
+  className="label"
+>
+  <h2
+    className="title"
+  >
+    text
+  </h2>
+</aside>
+`;

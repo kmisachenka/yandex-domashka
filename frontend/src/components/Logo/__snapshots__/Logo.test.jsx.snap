@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo should match snapshot 1`] = `
+<div
+  className="wrapper"
+>
+  <Link
+    to="/"
+  >
+    <img
+      alt="Яндекс"
+      src="https://yastatic.net/q/logoaas/v1/Яндекс.svg"
+    />
+  </Link>
+  <Link
+    className="service"
+    to="/"
+  >
+    <img
+      alt="Домашка"
+      src="https://yastatic.net/q/logoaas/v1/Домашка.svg"
+    />
+  </Link>
+</div>
+`;
+
+exports[`Logo should render with custom service 1`] = `
+<div
+  className="wrapper"
+>
+  <Link
+    to="/"
+  >
+    <img
+      alt="Яндекс"
+      src="https://yastatic.net/q/logoaas/v1/Яндекс.svg"
+    />
+  </Link>
+  <Link
+    className="service"
+    to="/"
+  >
+    <img
+      alt="Test"
+      src="https://yastatic.net/q/logoaas/v1/Test.svg"
+    />
+  </Link>
+</div>
+`;

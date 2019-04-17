@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tags should match snapshot 1`] = `
+<ul
+  className="tags"
+>
+  <li
+    className="tag"
+    key="0"
+  >
+    покупки
+  </li>
+  <li
+    className="tag"
+    key="1"
+  >
+    Работа
+  </li>
+  <li
+    className="tag"
+    key="2"
+  >
+    ШРИ
+  </li>
+</ul>
+`;
+
+exports[`Tags should render only provided tags 1`] = `
+<ul
+  className="tags"
+>
+  <li
+    className="tag"
+    key="1"
+  >
+    Работа
+  </li>
+</ul>
+`;

@@ -13,6 +13,10 @@ export default function Hamburger(props) {
   );
 }
 
+Hamburger.defaultProps = {
+  handleClick: () => {},
+};
+
 Hamburger.propTypes = {
-  handleClick: PropTypes.func.isRequired,
+  handleClick: PropTypes.func,
 };
