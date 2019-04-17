@@ -134,11 +134,11 @@ describe('/api/notes tests', () => {
         created: 1551593220000,
       });
     });
-    it('should return 400 if note doesnt exists', async () => {
+    it('should return 404 if note doesnt exists', async () => {
       const response: request.Response = await request(app).get(
         '/api/notes/9999'
       );
-      expect(response.status).toBe(400);
+      expect(response.status).toBe(404);
       expect(response.body.ok).toBeFalsy();
       expect(response.body.error).toBe(`note with id '9999' doesnt exists`);
     });
@@ -166,7 +166,7 @@ describe('/api/notes tests', () => {
       expect(deleteResponse.body.ok).toBeTruthy();
 
       const response: request.Response = await request(app).get('/api/notes/3');
-      expect(response.status).toBe(400);
+      expect(response.status).toBe(404);
       expect(response.body.ok).toBeFalsy();
       expect(response.body.error).toBe(`note with id '3' doesnt exists`);
     });

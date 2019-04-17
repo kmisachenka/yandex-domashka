@@ -51,7 +51,7 @@ export const getOne = (
     const note = noteRepository.getOne(id);
     if (!note) {
       res
-        .status(400)
+        .status(404)
         .json({ ok: false, error: `note with id '${id}' doesnt exists` });
       return;
     }
