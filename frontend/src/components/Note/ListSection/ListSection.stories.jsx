@@ -1,15 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import ListSection from './ListSection';
+import Provider from '../../reduxProvider';
 
 storiesOf('Список', module)
+  .addDecorator(story => <Provider story={story()} />)
   .add('со списком', () => {
     const note = {
       type: 'list',
       title: 'Список покупок',
-      tags: [
-        0,
-      ],
+      tags: [0],
       color: 0,
       items: [
         {

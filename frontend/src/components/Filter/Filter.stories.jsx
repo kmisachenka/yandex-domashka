@@ -2,10 +2,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Filter from './Filter';
 
-storiesOf('Фильтр', module)
-  .add('фильтр', () => (
-    <Filter colors={
-      [
+storiesOf('Фильтр', module).add(
+  'фильтр',
+  () => (
+    <Filter
+      activeColors={[1, 3, 4]}
+      colors={[
         {
           id: 0,
           color: '#E84747',
@@ -34,7 +36,8 @@ storiesOf('Фильтр', module)
           id: 6,
           color: '#9B51E0',
         },
-      ]
-    }
+      ]}
     />
-  ), { viewport: { defaultViewport: 'iphonex' } });
+  ),
+  { viewport: { defaultViewport: 'iphonex' } }
+);

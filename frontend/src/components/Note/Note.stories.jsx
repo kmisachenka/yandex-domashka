@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Note from './Note';
+import Provider from '../reduxProvider';
 
 const colors = [
   {
@@ -34,6 +35,7 @@ const colors = [
 ];
 
 storiesOf('Заметка', module)
+  .addDecorator(story => <Provider story={story()} />)
   .add('Завтра дедлайн', () => {
     const note = {
       type: 'text',
