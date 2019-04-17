@@ -3,7 +3,6 @@ import { Note, Type, Size, ID } from '../types';
 type MapCallbackFunction = (note: Note) => Note;
 type FilterCallbackFunction = (note: Note) => boolean;
 type ForEachCallbackFunction = (note: Note) => void;
-type FindCallbackFunction = (note: Note) => boolean;
 
 export default class Notes {
   private notes: Note[];
@@ -17,7 +16,6 @@ export default class Notes {
   }
 
   public addNote(note: Note): void {
-    /* eslint-disable no-param-reassign */
     if (note.size) {
       this.notes.push(note);
     } else {

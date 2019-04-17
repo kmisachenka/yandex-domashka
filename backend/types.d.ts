@@ -30,7 +30,7 @@ export enum Size {
   LARGE = 'l',
 }
 
-export type ID = string | number;
+export type ID = number;
 
 export interface Note {
   id: ID;
