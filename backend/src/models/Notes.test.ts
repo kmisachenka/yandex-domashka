@@ -118,6 +118,19 @@ describe('Notes', () => {
       expect(array).toHaveLength(1);
     });
 
+    it('should assign id if not exists', () => {
+      Date.now = jest.fn(() => 987654321);
+      const note = {
+        type: 'list',
+        text: 'some list',
+        created: 123456789,
+      };
+      notes.addNote(note as Note);
+      const array = notes.toArray();
+      expect(array).toHaveLength(1);
+      expect(array[0].id).toBe(987654321);
+    });
+
     it('should assign size if not exists', () => {
       const note = {
         id: 1,
