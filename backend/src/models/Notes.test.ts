@@ -32,6 +32,15 @@ describe('Notes', () => {
       expect(array).toBeInstanceOf(Array);
       expect(array).toHaveLength(2);
     });
+    it('should return a copy of array', () => {
+      const copied = notes.toArray();
+      notes.removeOne(1);
+      expect(copied).toBeInstanceOf(Array);
+      expect(copied).toHaveLength(2);
+      const original = notes.toArray();
+      expect(original).toBeInstanceOf(Array);
+      expect(original).toHaveLength(1);
+    });
   });
 
   describe('length()', () => {

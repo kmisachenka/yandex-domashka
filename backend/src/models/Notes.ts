@@ -64,7 +64,7 @@ export default class Notes {
   }
 
   public toArray(): Note[] {
-    return this.notes;
+    return this.notes.map(note => ({ ...note }));
   }
 
   public map(callback: MapCallbackFunction): Notes {
