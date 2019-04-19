@@ -16,6 +16,7 @@
     "test": "concurrently \"yarn test:backend\" \"yarn test:frontend\"",
     "test:backend": "cd backend && yarn test",
     "test:frontend": "cd frontend && yarn test",
+    "test:e2e": "cd frontend && yarn cypress:test",
     "serve": "cd backend && node build/server.js",
     "lint": "concurrently \"yarn lint:backend\" \"yarn lint:frontend\"",
     "lint:backend": "cd backend && yarn lint",
