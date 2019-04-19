@@ -30,7 +30,7 @@
 
 - [ ] [bem-react](https://github.com/bem/bem-react)
 - [ ] Прикрутить MongoDB - бесплатно на [MLab](https://mlab.com/)
-- [ ] Написать e2e тесты (Cypress, WebdriverIO, Selenium, etc)
+- [x] Написать e2e тесты (Cypress, WebdriverIO, Selenium, etc)
 - [ ] Посмотреть как Slack и Facebook отображают UI когда загружаются данные - заменить Spinner на это
 
 # Основные скрипты
