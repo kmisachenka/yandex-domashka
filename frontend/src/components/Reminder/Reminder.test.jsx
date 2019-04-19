@@ -1,13 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import moment from 'moment';
+import * as luxon from 'luxon';
 
 import Reminder from './Reminder';
 
-jest.mock('moment');
-moment.mockReturnValue({
-  fromNow: () => '2 дня',
-});
+jest.mock('luxon');
+
+luxon.DateTime.fromMillis = jest.fn(() => ({
+  toRelative: jest.fn(() => 'через 2 дня'),
+}));
 
 describe('Reminder', () => {
   it('should match the snapshot', () => {

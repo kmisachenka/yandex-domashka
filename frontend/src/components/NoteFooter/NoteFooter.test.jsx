@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import moment from 'moment';
+import * as luxon from 'luxon';
 
 import NoteFooter from './NoteFooter';
 
-jest.mock('moment');
-moment.mockReturnValue({
-  fromNow: () => '2 дня',
-});
+jest.mock('luxon');
+luxon.DateTime.fromMillis = jest.fn(() => ({
+  toRelative: jest.fn(() => '2 дня'),
+}));
 
 const note = {
   id: 3,
@@ -19,7 +19,7 @@ const note = {
 };
 const handleDoneClick = jest.fn();
 describe('NoteFooter', () => {
-  it('should match snapshot', () => {
+  it.only('should match snapshot', () => {
     const wrapper = shallow(
       <NoteFooter note={note} handleDoneClick={handleDoneClick} />
     );

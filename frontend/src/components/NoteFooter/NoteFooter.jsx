@@ -1,6 +1,6 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
-import moment from 'moment';
+import * as luxon from "luxon";
 
 import styles from './NoteFooter.module.scss';
 
@@ -10,11 +10,10 @@ import { ReactComponent as EditButton } from './svg/edit.svg';
 import { Tags } from '../../containers';
 import { Note } from '../../types';
 
-moment.locale('ru');
-
 export default function NoteFooter(props) {
   const { note, tags, handleDoneClick } = props;
   const { id, created, archived } = note;
+  const time = luxon.DateTime.fromMillis(created).toRelative({ locale: 'ru' });
   return (
     <div className={styles.footer}>
       {tags && <Tags tags={tags} />}
@@ -39,7 +38,9 @@ export default function NoteFooter(props) {
             </button>
           </li>
         </ul>
-        <span className={styles.time}>{moment(created).fromNow()}</span>
+        <span className={styles.time}>
+          {time}
+        </span>
       </div>
     </div>
   );
