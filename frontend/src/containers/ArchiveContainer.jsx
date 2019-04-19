@@ -21,7 +21,7 @@ class ArchiveContainer extends React.Component {
   render() {
     const { notes, colors, filterColors, isLoading } = this.props;
 
-    if (isLoading || !notes || notes.length === 0) {
+    if (isLoading) {
       return <Spinner />;
     }
 
