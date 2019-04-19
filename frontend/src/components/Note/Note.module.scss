@@ -54,6 +54,12 @@
   position: relative;
 
   z-index: 10;
+
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: 0 2px 6px rgba(197, 186, 186, 0.5);
+  }
 }
 
 .body {
