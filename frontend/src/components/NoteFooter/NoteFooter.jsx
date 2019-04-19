@@ -1,6 +1,6 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
-import * as luxon from "luxon";
+import * as luxon from 'luxon';
 
 import styles from './NoteFooter.module.scss';
 
@@ -14,6 +14,7 @@ export default function NoteFooter(props) {
   const { note, tags, handleDoneClick } = props;
   const { id, created, archived } = note;
   const time = luxon.DateTime.fromMillis(created).toRelative({ locale: 'ru' });
+
   return (
     <div className={styles.footer}>
       {tags && <Tags tags={tags} />}
@@ -38,9 +39,7 @@ export default function NoteFooter(props) {
             </button>
           </li>
         </ul>
-        <span className={styles.time}>
-          {time}
-        </span>
+        <span className={styles.time}>{time}</span>
       </div>
     </div>
   );
