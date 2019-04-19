@@ -31,7 +31,7 @@ app.use(errorApiHandler);
 
 app.use(express.static(path.resolve('..', 'frontend', 'build')));
 
-app.get('*', (request, response) => {
+app.get('*', (_, response: express.Response) => {
   response.sendFile(path.resolve('..', 'frontend', 'build', 'index.html'));
 });
 

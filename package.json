@@ -13,7 +13,7 @@
     "start": "concurrently \"yarn start:backend\" \"yarn start:frontend\"",
     "start:backend": "cd backend && yarn start",
     "start:frontend": "cd frontend && yarn start",
-    "test": "yarn test:backend && yarn test:frontend",
+    "test": "concurrently \"yarn test:backend\" \"yarn test:frontend\"",
     "test:backend": "cd backend && yarn test",
     "test:frontend": "cd frontend && yarn test",
     "serve": "cd backend && node build/server.js",
