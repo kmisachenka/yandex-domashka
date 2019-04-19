@@ -13,7 +13,7 @@ const Index = () => (
       <main className={styles.wrapper}>
         <Switch>
           <Route exact path="/archive" component={Archive} />
-          <Route exact path="/" component={Notes} />
+          <Route path="/" component={Notes} />
         </Switch>
       </main>
       <Footer className={styles.footer} copyright="Кирилл Мисоченко" />
