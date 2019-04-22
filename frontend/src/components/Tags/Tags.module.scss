@@ -8,8 +8,10 @@
 }
 
 .tag {
-  background: rgba(51, 51, 51, 0.1);
+  background-color: rgba(51, 51, 51, 0.1);
   border-radius: 16px;
+
+  max-width: 210px;
 
   font-family: Helvetica, serif;
   font-size: 14px;
@@ -22,8 +24,14 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 
+  transition: 0.2s background-color;
+
   &:last-child {
     margin-bottom: 0;
     margin-right: 0;
+  }
+
+  &:hover {
+    background-color: rgba(51, 51, 51, 0.2);
   }
 }
