@@ -37,5 +37,6 @@
 
 - `build` - Сборка проектов (backend & frontend)
 - `start` - Запуск приложения в development режиме
-- `test` - Запуск тестов
+- `test` - Запуск unit и integration тестов
+- `test:e2e`- Запуск e2e тестов
 - `lint` - Запуск линтеров
