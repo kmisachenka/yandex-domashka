@@ -1,24 +1,18 @@
 .form {
   display: flex;
+  width: 100%;
 }
 
 .label {
   height: 32px;
   position: relative;
   width: 100%;
-
-  &::after {
-    background: url('./svg/clear.svg') no-repeat;
-    content: '';
-    height: 12px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    width: 12px;
-  }
 }
 
 .input {
+  appearance: none;
+  margin: 0;
+  padding: 0;
   border: 2px solid #e6e6e6;
   border-radius: 4px 0 0 4px;
   box-sizing: border-box;
@@ -26,7 +20,7 @@
   font-size: 15px;
   line-height: 28px;
 
-  min-height: 28px;
+  min-height: 32px;
 
   padding: 0 12px;
 
