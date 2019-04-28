@@ -1,7 +1,23 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=$CC_TEST_REPORTER_ID
+
 language: node_js
 node_js: 10
+
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
 script:
   - yarn lint
-  - yarn test
+  - yarn test:coverage
   - yarn build
   - yarn test:e2e
+
+after_script:
+  - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.backend.json backend/coverage/lcov.info
+  - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.frontend.json frontend/coverage/lcov.info
+  - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2
+  - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi
