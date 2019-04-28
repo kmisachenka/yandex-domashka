@@ -81,6 +81,7 @@
     "build": "SKIP_PREFLIGHT_CHECK=true react-scripts build",
     "postinstall": "yarn build",
     "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test --ci --no-watch",
+    "test:coverage": "yarn test --coverage",
     "test:watch": "SKIP_PREFLIGHT_CHECK=true react-scripts test --watchAll",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",

@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "test": "NODE_ENV=testing jest --colors",
+    "test:coverage": "yarn test --coverage",
     "test:watch": "yarn test --watchAll",
     "start": "webpack --watch",
     "lint": "eslint 'src/**/*.{js,ts,tsx,jsx}'"
