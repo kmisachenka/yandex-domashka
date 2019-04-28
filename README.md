@@ -1,4 +1,4 @@
-# Яндекс.Домашка &middot; [![Build Status](https://travis-ci.com/kmisachenka/yandex-domashka.svg?token=xrh736JcsE4kMVB1sCn3&branch=master)](https://travis-ci.com/kmisachenka/yandex-domashka) &middot; [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
+# Яндекс.Домашка &middot; [![Build Status](https://travis-ci.com/kmisachenka/yandex-domashka.svg?token=xrh736JcsE4kMVB1sCn3&branch=master)](https://travis-ci.com/kmisachenka/yandex-domashka) &middot; [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest) &middot; [![Maintainability](https://api.codeclimate.com/v1/badges/736f89d50e4b45142a6d/maintainability)](https://codeclimate.com/github/kmisachenka/yandex-domashka/maintainability) &middot; [![Test Coverage](https://api.codeclimate.com/v1/badges/736f89d50e4b45142a6d/test_coverage)](https://codeclimate.com/github/kmisachenka/yandex-domashka/test_coverage)
 
 Демо: [https://yandex-domashka.herokuapp.com/](https://yandex-domashka.herokuapp.com/)
 
