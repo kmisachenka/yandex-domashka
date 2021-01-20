@@ -27,7 +27,7 @@
     "@rooks/use-toggle": "^2.0.2",
     "classnames": "^2.2.6",
     "hex-to-rgba": "^1.0.2",
-    "immer": "^2.1.5",
+    "immer": "^8.0.1",
     "luxon": "^1.12.1",
     "node-sass": "^4.11.0",
     "prop-types": "^15.7.2",
