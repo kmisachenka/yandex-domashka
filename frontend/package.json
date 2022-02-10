@@ -29,7 +29,7 @@
     "hex-to-rgba": "^1.0.2",
     "immer": "^2.1.5",
     "luxon": "^1.12.1",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
